@@ -188,16 +188,14 @@ def apply_weights(
     coords = list(weights.keys())
     weight_arrays = list(weights.values())
 
-    if skipna:
-        valid_frac = xr.dot(
-            da.notnull(), *weight_arrays, dim=list(weights.keys()), optimize=True
-        )
-
     da_regrid: xr.DataArray = xr.dot(
         da.fillna(0), *weight_arrays, dim=list(weights.keys()), optimize=True
     )
 
     if skipna:
+        valid_frac = xr.dot(
+            da.notnull(), *weight_arrays, dim=list(weights.keys()), optimize=True
+        )
         da_regrid /= valid_frac
         da_regrid = da_regrid.where(valid_frac >= get_valid_threshold(nan_threshold))
 
@@ -238,7 +236,7 @@ def apply_spherical_correction(
 ) -> xr.DataArray:
     """Apply a sperical earth correction on the prepared dot product weights."""
     da = dot_array.copy()
-    latitude_res = np.median(np.diff(dot_array[latitude_coord].to_numpy(), 1))
+    latitude_res = float(np.median(np.diff(dot_array[latitude_coord].to_numpy(), 1)))
     lat_weights = lat_weight(dot_array[latitude_coord].to_numpy(), latitude_res)
     da.values = utils.normalize_overlap(dot_array.values * lat_weights[:, np.newaxis])
     return da
@@ -276,6 +274,8 @@ def format_weights(
         See: https://github.com/dask/dask/issues/2225
     3. Weights are converted to a sparse representation (on a per chunk basis)
         if the `sparse` package is available.
+    
+    Returns weights that are compatible with both sparse and dense numpy arrays.
     """
     # Use single precision weights at minimum, double if input is double
     weights_dtype = np.result_type(np.float32, input_dtype)
@@ -294,9 +294,10 @@ def format_weights(
 
     if chunks:
         new_weights = new_weights.chunk(chunks)
-        if sparse is not None:
-            new_weights.data = new_weights.data.map_blocks(sparse.COO)
-    elif sparse is not None:
-        new_weights.data = sparse.COO(weights.data)
+        # TEMPORARY: Disable sparse conversion to fix hanging issue
+        # if sparse is not None:
+        #     new_weights.data = new_weights.data.map_blocks(sparse.COO)
+    # elif sparse is not None:
+    #     new_weights.data = sparse.COO(weights.data)
 
     return new_weights

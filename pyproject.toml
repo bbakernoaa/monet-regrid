@@ -26,6 +26,8 @@ dependencies = [
   "xarray",
   "flox",
   "scipy",
+  "pyproj",
+  "cf-xarray",
 ]
 
 [tool.hatch.build]

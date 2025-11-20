@@ -71,3 +71,11 @@ micromamba create -n environment_name -f environment.yml
 ## Acknowledgements
 
 This package was developed under Netherlands eScience Center grant [NLESC.OEC.2022.017](https://research-software-directory.org/projects/excited).
+
+**Dependencies:**
+*   `numpy`
+*   `xarray`
+*   `flox`
+*   `scipy`
+*   `pyproj`
+*   `cf-xarray`

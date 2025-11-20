@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## 0.5.0 (YYYY-MM-DD)
+
+Added:
+ - Support for curvilinear grids using 3D coordinate transformations.
+ - New `CurvilinearRegridder` class for handling curvilinear grids.
+ - `build_regridder` factory method that automatically detects grid types (rectilinear/curvilinear) and dispatches to the appropriate regridder.
+ - Examples and documentation for curvilinear grid regridding.
+
+Changed:
+ - Refactored regridding logic to support both rectilinear and curvilinear grids through a unified API.
+
 ## 0.4.1 (2025-04-08)
 
 Fixed:
