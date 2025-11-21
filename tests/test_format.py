@@ -1,13 +1,17 @@
 import numpy as np
 import xarray as xr
 
-import xarray_regrid
-from xarray_regrid.utils import format_for_regrid
+import monet_regrid
+from monet_regrid.utils import format_for_regrid
+
+# REBRAND NOTICE: This test file has been updated to use the new monet_regrid package.
+# Old imports: import xarray_regrid; from xarray_regrid.utils import format_for_regrid
+# New imports: import monet_regrid; from monet_regrid.utils import format_for_regrid
 
 
 def test_covered():
     dx_source = 2
-    source = xarray_regrid.Grid(
+    source = monet_regrid.Grid(
         north=90,
         east=360,
         south=-90,
@@ -17,7 +21,7 @@ def test_covered():
     ).create_regridding_dataset()
 
     dx_target = 1
-    target = xarray_regrid.Grid(
+    target = monet_regrid.Grid(
         north=80,
         east=350,
         south=-80,
@@ -34,7 +38,7 @@ def test_covered():
 
 def test_no_edges():
     dx_source = 2
-    source = xarray_regrid.Grid(
+    source = monet_regrid.Grid(
         north=90 - dx_source / 2,
         east=360 - dx_source / 2,
         south=-90 + dx_source / 2,
@@ -44,7 +48,7 @@ def test_no_edges():
     ).create_regridding_dataset()
 
     dx_target = 1
-    target = xarray_regrid.Grid(
+    target = monet_regrid.Grid(
         north=90,
         east=360,
         south=-90,
@@ -65,7 +69,7 @@ def test_no_edges():
 
 def test_360_to_180():
     dx_source = 2
-    source = xarray_regrid.Grid(
+    source = monet_regrid.Grid(
         north=90,
         east=360,
         south=-90,
@@ -75,7 +79,7 @@ def test_360_to_180():
     ).create_regridding_dataset()
 
     dx_target = 1
-    target = xarray_regrid.Grid(
+    target = monet_regrid.Grid(
         north=90,
         east=180,
         south=-90,
@@ -94,7 +98,7 @@ def test_360_to_180():
 
 def test_180_to_360():
     dx_source = 2
-    source = xarray_regrid.Grid(
+    source = monet_regrid.Grid(
         north=90,
         east=180,
         south=-90,
@@ -104,7 +108,7 @@ def test_180_to_360():
     ).create_regridding_dataset()
 
     dx_target = 1
-    target = xarray_regrid.Grid(
+    target = monet_regrid.Grid(
         north=90,
         east=360,
         south=-90,
@@ -123,7 +127,7 @@ def test_180_to_360():
 
 def test_0_to_360():
     dx_source = 2
-    source = xarray_regrid.Grid(
+    source = monet_regrid.Grid(
         north=90,
         east=0,
         south=-90,
@@ -133,7 +137,7 @@ def test_0_to_360():
     ).create_regridding_dataset()
 
     dx_target = 1
-    target = xarray_regrid.Grid(
+    target = monet_regrid.Grid(
         north=90,
         east=360,
         south=-90,
@@ -152,7 +156,7 @@ def test_0_to_360():
 
 def test_global_to_local_shift():
     dx_source = 2
-    source = xarray_regrid.Grid(
+    source = monet_regrid.Grid(
         north=90,
         east=180,
         south=-90,
@@ -162,7 +166,7 @@ def test_global_to_local_shift():
     ).create_regridding_dataset()
 
     dx_target = 1
-    target = xarray_regrid.Grid(
+    target = monet_regrid.Grid(
         north=90,
         east=300,
         south=-90,
@@ -182,7 +186,7 @@ def test_global_to_local_shift():
 def test_stats():
     """Special handling for statistical aggregations."""
     dx_source = 1
-    source = xarray_regrid.Grid(
+    source = monet_regrid.Grid(
         north=90 - dx_source / 2,
         east=360 - dx_source / 2,
         south=-90 + dx_source / 2,
@@ -197,7 +201,7 @@ def test_stats():
     )
 
     dx_target = 2
-    target = xarray_regrid.Grid(
+    target = monet_regrid.Grid(
         north=90,
         east=360,
         south=-90,
@@ -220,7 +224,7 @@ def test_stats():
 
 def test_maintain_single_chunk():
     dx_source = 2
-    source = xarray_regrid.Grid(
+    source = monet_regrid.Grid(
         north=90 - dx_source / 2,
         east=360 - dx_source / 2,
         south=-90 + dx_source / 2,
@@ -236,7 +240,7 @@ def test_maintain_single_chunk():
     source["b"] = source.a.copy().chunk({"latitude": 45, "longitude": 90})
 
     dx_target = 1
-    target = xarray_regrid.Grid(
+    target = monet_regrid.Grid(
         north=90,
         east=360,
         south=-90,

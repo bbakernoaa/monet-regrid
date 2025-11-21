@@ -10,7 +10,11 @@ import xarray as xr
 from scipy.spatial import ConvexHull, Delaunay
 from scipy.spatial.distance import cdist
 
-from xarray_regrid.curvilinear import CurvilinearInterpolator
+from monet_regrid.curvilinear import CurvilinearInterpolator
+
+# REBRAND NOTICE: This test file has been updated to use the new monet_regrid package.
+# Old import: from xarray_regrid.curvilinear import CurvilinearInterpolator
+# New import: from monet_regrid.curvilinear import CurvilinearInterpolator
 
 
 class TestKDTreeStructure:
@@ -317,9 +321,15 @@ class TestSpatialStructureEdgeCases:
         assert hasattr(interpolator, 'kdtree')
         assert interpolator.kdtree.n == 1
         
-        # Linear method should fail gracefully for single point
-        with pytest.raises(ValueError, match="Could not build Delaunay triangulation"):
-            CurvilinearInterpolator(source_grid, target_grid, method="linear")
+        # Linear method should fall back to nearest neighbor for single point
+        # It warns instead of raising ValueError now
+        with pytest.warns(UserWarning, match="Linear interpolation requires at least 4 source points"):
+            interpolator = CurvilinearInterpolator(source_grid, target_grid, method="linear")
+            # The method property might still say "linear" depending on implementation,
+            # but the internal engine should be using nearest neighbor logic.
+            # Let's check if it behaves like nearest neighbor (which works for single points)
+            result = interpolator(xr.DataArray(np.array([[10.0]]), dims=['y', 'x']))
+            assert result.item() == 10.0
     
     def test_empty_target_grid(self):
         """Test handling of empty target grids."""

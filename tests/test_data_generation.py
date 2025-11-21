@@ -4,6 +4,9 @@ This module provides utilities for generating test data with various characteris
 grid types, and challenging scenarios for comprehensive testing.
 """
 
+# REBRAND NOTICE: This test file has been updated to use the new monet_regrid package.
+# All imports have been updated from xarray_regrid to monet_regrid.
+
 import numpy as np
 import xarray as xr
 from typing import Tuple, Optional, Dict, Any

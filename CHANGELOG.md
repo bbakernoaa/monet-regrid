@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
-## 0.5.0 (YYYY-MM-DD)
+## 0.5.0 (2025-11-21) - monet-regrid Rebrand
 
 Added:
  - Support for curvilinear grids using 3D coordinate transformations.
@@ -13,7 +13,11 @@ Added:
  - Examples and documentation for curvilinear grid regridding.
 
 Changed:
- - Refactored regridding logic to support both rectilinear and curvilinear grids through a unified API.
+ - Package renamed from xarray-regrid to monet-regrid to reflect new ownership and scope
+ - Refactored regridding logic to support both rectilinear and curvilinear grids through a unified API
+ - Updated documentation and examples to use new monet-regrid import paths
+ - Updated license headers to reflect derivative work status with Apache 2.0 compliance
+ - Updated project URLs and metadata to reflect new repository location
 
 ## 0.4.1 (2025-04-08)
 

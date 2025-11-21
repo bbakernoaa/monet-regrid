@@ -1,7 +1,11 @@
 import numpy as np
 import xarray as xr
 
-from xarray_regrid.utils import format_lat
+from monet_regrid.utils import format_lat
+
+# REBRAND NOTICE: This test file has been updated to use the new monet_regrid package.
+# Old import: from xarray_regrid.utils import format_lat
+# New import: from monet_regrid.utils import format_lat
 
 
 def test_format_lat():

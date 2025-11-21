@@ -3,7 +3,11 @@ import pytest
 import xarray as xr
 from numpy.testing import assert_array_equal
 
-from xarray_regrid import Grid, create_regridding_dataset
+from monet_regrid import Grid, create_regridding_dataset
+
+# REBRAND NOTICE: This test file has been updated to use the new monet_regrid package.
+# Old import: from xarray_regrid import Grid, create_regridding_dataset
+# New import: from monet_regrid import Grid, create_regridding_dataset
 
 EXP_LABELS = np.array([0, 1, 2, 3])  # labels that are in the dummy data
 

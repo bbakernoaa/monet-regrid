@@ -4,12 +4,16 @@ import numpy as np
 import pytest
 import xarray as xr
 
-from xarray_regrid import RectilinearRegridder, CurvilinearRegridder
+from monet_regrid import RectilinearRegridder, CurvilinearRegridder
+
+# REBRAND NOTICE: This test file has been updated to use the new monet_regrid package.
+# Old import: from xarray_regrid import RectilinearRegridder, CurvilinearRegridder
+# New import: from monet_regrid import RectilinearRegridder, CurvilinearRegridder
 
 
 def test_baseregridder_abstract():
     """Test that BaseRegridder is properly abstract."""
-    from xarray_regrid.core import BaseRegridder
+    from monet_regrid.core import BaseRegridder
     
     # Should not be instantiable directly
     with pytest.raises(TypeError):

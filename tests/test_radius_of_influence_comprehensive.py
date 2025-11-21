@@ -14,13 +14,13 @@ import numpy as np
 import xarray as xr
 import pytest
 try:
-    from src.xarray_regrid.curvilinear import CurvilinearInterpolator
+    from src.monet_regrid.curvilinear import CurvilinearInterpolator
 except ImportError:
     # When running from tests directory
     import sys
     import os
     sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
-    from src.xarray_regrid.curvilinear import CurvilinearInterpolator
+    from src.monet_regrid.curvilinear import CurvilinearInterpolator
 
 
 def create_curvilinear_grids():

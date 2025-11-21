@@ -1,7 +1,7 @@
 # xarray-regrid Refactoring Project Summary
 
 ## Overview
-This document summarizes the completion of the xarray-regrid refactoring project, focusing on the implementation of curvilinear grid support.
+This document summarizes the completion of the xarray-regrid to monet-regrid rebranding project, focusing on the implementation of curvilinear grid support.
 
 ## Completed Components
 

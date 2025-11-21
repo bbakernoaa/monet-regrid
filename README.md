@@ -1,9 +1,9 @@
-# xarray-regrid: Regridding utilities for xarray.
+# monet-regrid: Regridding utilities for xarray.
 
 <img align="right" width="100" alt="Logo" src="./docs/assets/logo.png">
 
 
-With xarray-regrid it is possible to regrid between two rectilinear grids. The following methods are supported:
+With monet-regrid it is possible to regrid between two rectilinear grids. The following methods are supported:
  - Linear
  - Nearest-neighbor
  - Conservative
@@ -14,12 +14,12 @@ All regridding methods can operate lazily on [Dask arrays](https://docs.xarray.d
 
 Note that "Most common value" is designed to regrid categorical data to a coarse resolution. For regridding categorical data to a finer resolution, please use "nearest-neighbor" regridder.
 
-[![PyPI](https://img.shields.io/pypi/v/xarray-regrid.svg?style=flat)](https://pypi.python.org/pypi/xarray-regrid/)
-[![conda-forge](https://anaconda.org/conda-forge/xarray-regrid/badges/version.svg)](https://anaconda.org/conda-forge/xarray-regrid)
+[![PyPI](https://img.shields.io/pypi/v/monet-regrid.svg?style=flat)](https://pypi.python.org/pypi/monet-regrid/)
+[![conda-forge](https://anaconda.org/conda-forge/monet-regrid/badges/version.svg)](https://anaconda.org/conda-forge/monet-regrid)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.10203304.svg)](https://doi.org/10.5281/zenodo.10203304)
-[![Docs](https://readthedocs.org/projects/xarray-regrid/badge/?version=latest&style=flat)](https://xarray-regrid.readthedocs.org/)
+[![Docs](https://readthedocs.org/projects/monet-regrid/badge/?version=latest&style=flat)](https://monet-regrid.readthedocs.org/)
 
-## Why xarray-regrid?
+## Why monet-regrid?
 
 Regridding is a common operation in earth science and other fields. While xarray does have some interpolation methods available, these are not always straightforward to use. Additionally, methods such as conservative regridding, or taking the most common value, are not available in xarray.
 
@@ -27,14 +27,14 @@ Regridding is a common operation in earth science and other fields. While xarray
 
 For a minimal install:
 ```console
-pip install xarray-regrid
+pip install monet-regrid
 ```
 
-*Note: xarray-regrid is also [available on conda-forge](https://anaconda.org/conda-forge/xarray-regrid).*
+*Note: monet-regrid is also [available on conda-forge](https://anaconda.org/conda-forge/monet-regrid).*
 
 To improve performance in certain cases:
 ```console
-pip install xarray-regrid[accel]
+pip install monet-regrid[accel]
 ```
 
 which includes optional extras such as:
@@ -45,9 +45,9 @@ which includes optional extras such as:
 Benchmarking varies across different hardware specifications, but the inclusion of these extras can often provide significant speedups.
 
 ## Usage
-The xarray-regrid routines are accessed using the "regrid" accessor on an xarray Dataset:
+The monet-regrid routines are accessed using the "regrid" accessor on an xarray Dataset:
 ```py
-import xarray_regrid
+import monet_regrid
 
 ds = xr.open_dataset("input_data.nc")
 ds_grid = xr.open_dataset("target_grid.nc")

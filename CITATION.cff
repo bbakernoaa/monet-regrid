@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-title: xarray-regrid
+title: monet-regrid
 message: >-
   If you use this software, please cite it using the
   metadata from this file.
@@ -27,7 +27,7 @@ authors:
     affiliation: Tensorial (EI Bernard Mares)
     email: services-xarray-regrid@tensorial.com
 
-repository-code: 'https://github.com/EXCITED-CO2/xarray-regrid'
+repository-code: 'https://github.com/NOAA-CSL/monet-regrid'
 keywords:
   - xarray
   - geospatial
@@ -35,7 +35,7 @@ keywords:
   - conservative regridding
 license: Apache-2.0
 abstract: >
-  xarray-regrid can regrid (geospatial) data to a new
+  monet-regrid can regrid (geospatial) data to a new
   coordinate system.
 
 

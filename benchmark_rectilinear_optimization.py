@@ -6,7 +6,7 @@ Benchmark script to test performance improvements in rectilinear regridding.
 import time
 import numpy as np
 import xarray as xr
-from xarray_regrid.core import RectilinearRegridder
+from monet_regrid.core import RectilinearRegridder
 
 
 def create_test_grids(nx_source=100, ny_source=50, nx_target=50, ny_target=25):

@@ -21,25 +21,25 @@
 
   Changelog <changelog_link>
 
-xarray-regrid: Regridding utilities for xarray
-**********************************************
+monet-regrid: Regridding utilities for xarray
+*********************************************
 
 |PyPI| |DOI|
 
 Overview
 ========
 
-``xarray-regrid`` extends xarray with regridding methods, making it possibly to easily and effiently regrid between two rectilinear grids. 
+``monet-regrid`` extends xarray with regridding methods, making it possibly to easily and effiently regrid between two rectilinear grids.
 
 The following methods are supported:
 
-* `Linear <autoapi/xarray_regrid/regrid/index.html#xarray_regrid.regrid.Regridder.linear>`_
-* `Nearest-neighbor <autoapi/xarray_regrid/regrid/index.html#xarray_regrid.regrid.Regridder.nearest>`_
-* `Conservative <autoapi/xarray_regrid/regrid/index.html#xarray_regrid.regrid.Regridder.conservative>`_
-* `Cubic <autoapi/xarray_regrid/regrid/index.html#xarray_regrid.regrid.Regridder.cubic>`_
-* `Zonal statistics <autoapi/xarray_regrid/regrid/index.html#xarray_regrid.regrid.Regridder.stat>`_
-* `"Most common value" (zonal statistics) <autoapi/xarray_regrid/regrid/index.html#xarray_regrid.regrid.Regridder.most_common>`_
-* `"Least common value" (zonal statistics) <autoapi/xarray_regrid/regrid/index.html#xarray_regrid.regrid.Regridder.least_common>`_
+* `Linear <autoapi/monet_regrid/regrid/index.html#monet_regrid.regrid.Regridder.linear>`_
+* `Nearest-neighbor <autoapi/monet_regrid/regrid/index.html#monet_regrid.regrid.Regridder.nearest>`_
+* `Conservative <autoapi/monet_regrid/regrid/index.html#monet_regrid.regrid.Regridder.conservative>`_
+* `Cubic <autoapi/monet_regrid/regrid/index.html#monet_regrid.regrid.Regridder.cubic>`_
+* `Zonal statistics <autoapi/monet_regrid/regrid/index.html#monet_regrid.regrid.Regridder.stat>`_
+* `"Most common value" (zonal statistics) <autoapi/monet_regrid/regrid/index.html#monet_regrid.regrid.Regridder.most_common>`_
+* `"Least common value" (zonal statistics) <autoapi/monet_regrid/regrid/index.html#monet_regrid.regrid.Regridder.least_common>`_
 
 Note that "Most/least common value" is designed to regrid categorical data to a coarse resolution. For regridding categorical data to a finer resolution, please use "nearest-neighbor" regridder.
 
@@ -50,7 +50,7 @@ Installing
 
 .. code:: shell
 
-   pip install xarray-regrid
+   pip install monet-regrid
 
 
 Acknowledgements
@@ -60,8 +60,8 @@ This package was developed under Netherlands eScience Center grant `NLESC.OEC.20
 
 Some methods were inspired by discussions in the `Pangeo <https://pangeo.io>`_ community.
 
-.. |PyPI| image:: https://img.shields.io/pypi/v/xarray-regrid.svg?style=flat
-   :target: https://pypi.python.org/pypi/xarray-regrid/
+.. |PyPI| image:: https://img.shields.io/pypi/v/monet-regrid.svg?style=flat
+   :target: https://pypi.python.org/pypi/monet-regrid/
 
 .. |DOI| image:: https://zenodo.org/badge/DOI/10.5281/zenodo.10203304.svg
    :target: https://doi.org/10.5281/zenodo.10203304

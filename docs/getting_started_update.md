@@ -1,17 +1,40 @@
 # Getting Started
 
-``xarray-regrid`` allows you to regrid xarray Datasets or DataArrays to a new resolution.
-You can install xarray-regrid with pip:
+"""
+This file is part of monet-regrid.
+
+monet-regrid is a derivative work of xarray-regrid.
+Original work Copyright (c) 2023-2025 Bart Schilperoort, Yang Liu.
+This derivative work Copyright (c) 2025 [Your Organization].
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+Modifications: Package renamed from xarray-regrid to monet-regrid,
+URLs updated, and documentation adapted for new branding.
+"""
+
+``monet-regrid`` allows you to regrid xarray Datasets or DataArrays to a new resolution.
+You can install monet-regrid with pip:
 
 ```console
-pip install xarray-regrid
+pip install monet-regrid
 ```
 
-To use the package, import ``xarray_regrid``. This will register the ``.regrid`` 'accessor' so it can be used.
+To use the package, import ``monet_regrid``. This will register the ``.regrid`` 'accessor' so it can be used.
 Next load in the data you want to regrid, and the data with a grid you want to regrid to:
 
 ```python
-import xarray_regrid
+import monet_regrid
 import xarray as xr
 
 ds = xr.open_dataset("input_data.nc")
@@ -37,7 +60,7 @@ Additionally, there are separate methods available to compute the
 
 ## Curvilinear Grids
 
-``xarray-regrid`` now supports regridding for curvilinear grids using 3D coordinate transformations. This allows for accurate interpolation on spherical surfaces.
+``monet-regrid`` now supports regridding for curvilinear grids using 3D coordinate transformations. This allows for accurate interpolation on spherical surfaces.
 
 The `build_regridder` factory method automatically detects the grid type and selects the appropriate regridding implementation.
 
@@ -47,7 +70,7 @@ The `build_regridder` method is the recommended way to create a regridder, as it
 
 ```python
 import xarray as xr
-import xarray_regrid as xrg
+import monet_regrid as xrg
 
 # Assume ds_source and ds_target are xarray Datasets with appropriate coordinates
 

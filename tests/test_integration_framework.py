@@ -10,8 +10,12 @@ import xarray as xr
 import time
 from typing import Dict, Any
 
-from xarray_regrid.curvilinear import CurvilinearInterpolator
-from xarray_regrid.core import CurvilinearRegridder
+from monet_regrid.curvilinear import CurvilinearInterpolator
+from monet_regrid.core import CurvilinearRegridder
+
+# REBRAND NOTICE: This test file has been updated to use the new monet_regrid package.
+# Old imports: from xarray_regrid.curvilinear import ...; from xarray_regrid.core import ...
+# New imports: from monet_regrid.curvilinear import ...; from monet_regrid.core import ...
 
 
 class TestEndToEndWorkflows:
