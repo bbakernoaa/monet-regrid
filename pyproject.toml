@@ -36,9 +36,9 @@ exclude = [
 ]
 
 [project.urls]
-Documentation = "https://github.com/noaa-oar-arl/monet-regrid#readme"
-Issues = "https://github.com/noaa-oar-arl/monet-regrid/issues"
-Source = "https://github.com/noaa-oar-arl/monet-regrid"
+Documentation = "https://github.com/EXCITED-CO2/monet-regrid#readme"
+Issues = "https://github.com/EXCITED-CO2/monet-regrid/issues"
+Source = "https://github.com/EXCITED-CO2/monet-regrid"
 
 [project.optional-dependencies]
 accel = [
@@ -73,7 +73,7 @@ docs = [  # Required for ReadTheDocs
 ]
 
 [tool.hatch.version]
-path = "monet_regrid/__init__.py"
+path = "src/monet_regrid/__init__.py"
 
 [tool.hatch.envs.default]
 features = ["accel", "dev", "benchmarking"]
@@ -187,3 +187,4 @@ warn_return_any = true
 warn_unused_ignores = true
 show_error_codes = true
 exclude = ["tests/*", "docs"]
+
