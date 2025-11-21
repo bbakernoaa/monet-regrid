@@ -2,8 +2,12 @@ import numpy as np
 import pytest
 import xarray as xr
 
-from xarray_regrid.constants import GridType
-from xarray_regrid.utils import _get_grid_type, validate_grid_compatibility
+from monet_regrid.constants import GridType
+from monet_regrid.utils import _get_grid_type, validate_grid_compatibility
+
+# REBRAND NOTICE: This test file has been updated to use the new monet_regrid package.
+# Old imports: from xarray_regrid.constants import ...; from xarray_regrid.utils import ...
+# New imports: from monet_regrid.constants import ...; from monet_regrid.utils import ...
 
 
 def test_get_grid_type_rectilinear():

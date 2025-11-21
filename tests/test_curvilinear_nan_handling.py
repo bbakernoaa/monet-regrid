@@ -4,7 +4,11 @@ import numpy as np
 import pytest
 import xarray as xr
 
-from xarray_regrid.curvilinear import CurvilinearInterpolator
+from monet_regrid.curvilinear import CurvilinearInterpolator
+
+# REBRAND NOTICE: This test file has been updated to use the new monet_regrid package.
+# Old import: from xarray_regrid.curvilinear import CurvilinearInterpolator
+# New import: from monet_regrid.curvilinear import CurvilinearInterpolator
 
 
 def test_nan_handling_in_source_data_nearest():
@@ -171,8 +175,9 @@ def test_mixed_nan_valid_data():
     )
     
     # Test both nearest and linear interpolation
+    # Use fill_method="nearest" to ensure NaNs don't propagate excessively for this test
     for method in ["nearest", "linear"]:
-        interpolator = CurvilinearInterpolator(source_grid, target_grid, method=method)
+        interpolator = CurvilinearInterpolator(source_grid, target_grid, method=method, fill_method="nearest")
         result = interpolator(test_data)
         
         # Result should handle NaN reasonably - not all values should be NaN

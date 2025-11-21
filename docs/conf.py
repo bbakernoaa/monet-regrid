@@ -18,8 +18,31 @@ from importlib.metadata import version as get_version
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+"""
+This file is part of monet-regrid.
+
+monet-regrid is a derivative work of xarray-regrid.
+Original work Copyright (c) 2023-2025 Bart Schilperoort, Yang Liu.
+This derivative work Copyright (c) 2025 [Your Organization].
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+Modifications: Package renamed from xarray-regrid to monet-regrid,
+URLs updated, and documentation adapted for new branding.
+"""
+
 # General information about the project.
-project = "xarray-regrid"
+project = "monet-regrid"
 current_year = datetime.datetime.now().year
 copyright = f"2023-{current_year}, Bart Schilperoort"
 author = "Bart Schilperoort"
@@ -32,9 +55,9 @@ author = "Bart Schilperoort"
 # |version| and |release|, also used in various other places throughout the
 # built documents.
 # The short X.Y version.
-version = get_version("xarray_regrid").split("+")[0]
+version = get_version("monet_regrid").split("+")[0]
 # The full version, including alpha/beta/rc tags.
-release = get_version("xarray_regrid")
+release = get_version("monet_regrid")
 
 # -- General configuration ------------------------------------------------
 
@@ -56,8 +79,8 @@ extensions = [
 ]
 
 extlinks = {
-    "issue": ("https://github.com/excited-CO2/xarray-regrid/issues/%s", "GH#%s"),
-    "pr": ("https://github.com/excited-CO2/xarray-regrid/pull/%s", "PR#%s"),
+    "issue": ("https://github.com/EXCITED-CO2/monet-regrid/issues/%s", "GH#%s"),
+    "pr": ("https://github.com/EXCITED-CO2/monet-regrid/pull/%s", "PR#%s"),
 }
 
 # Add any paths that contain templates here, relative to this directory.

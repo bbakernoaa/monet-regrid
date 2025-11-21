@@ -3,7 +3,11 @@
 
 import xarray as xr
 import numpy as np
-import xarray_regrid  # Import to register the accessor
+import monet_regrid  # Import to register the accessor
+
+# REBRAND NOTICE: This test file has been updated to use the new monet_regrid package.
+# Old import: import xarray_regrid  # Import to register the accessor
+# New import: import monet_regrid  # Import to register the accessor
 
 def test_rasm_coordinate_validation():
     """Test the exact scenario from the user's issue with RASM dataset."""
@@ -106,8 +110,8 @@ def test_coordinate_mapping():
         
         # Debug: Check grid type detection
         print("  Debug: Checking grid types...")
-        from xarray_regrid.utils import _get_grid_type
-        from xarray_regrid.constants import GridType
+        from monet_regrid.utils import _get_grid_type
+        from monet_regrid.constants import GridType
         
         source_type = _get_grid_type(ds)
         target_type = _get_grid_type(ds_out)

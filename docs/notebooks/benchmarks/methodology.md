@@ -1,14 +1,37 @@
-# Benchmarking Methodology for xarray-regrid
+# Benchmarking Methodology for monet-regrid
 
-This document outlines the consistent methodology to be used across all benchmark notebooks in the xarray-regrid library.
+"""
+This file is part of monet-regrid.
+
+monet-regrid is a derivative work of xarray-regrid.
+Original work Copyright (c) 2023-2025 Bart Schilperoort, Yang Liu.
+This derivative work Copyright (c) 2025 [Your Organization].
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+Modifications: Package renamed from xarray-regrid to monet-regrid,
+URLs updated, and documentation adapted for new branding.
+"""
+
+This document outlines the consistent methodology to be used across all benchmark notebooks in the monet-regrid library.
 
 ## General Principles
 
 1. **Timing Measurements**: All performance benchmarks should use the `time.time()` function to measure execution time, with the format `time() - t0` where `t0` is the start time.
 2. **Dask Setup**: All notebooks should initialize a Dask client with `client = dask.distributed.Client()` for consistent parallel processing.
 3. **Data Loading**: Use ERA5 datasets or synthetic data with consistent dimensions where possible.
-4. **Target Grids**: Use the `xarray_regrid.Grid` class to create consistent target grids across benchmarks.
-5. **Comparison Metrics**: 
+4. **Target Grids**: Use the `monet_regrid.Grid` class to create consistent target grids across benchmarks.
+5. **Comparison Metrics**:
    - Performance: Execution time in seconds
    - Accuracy: Relative error `(a-b)/a` between datasets, root mean squared error (RMSE)
 
@@ -20,9 +43,9 @@ Each benchmark notebook should follow this structure:
 ```python
 from time import time
 import dask.distributed
-import xarray_regrid  # Importing this will make Dataset.regrid accessible.
+import monet_regrid  # Importing this will make Dataset.regrid accessible.
 import xarray as xr
-from xarray_regrid import Grid
+from monet_regrid import Grid
 import xesmf as xe
 
 client = dask.distributed.Client()

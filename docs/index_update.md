@@ -1,10 +1,33 @@
-# xarray-regrid: Regridding utilities for xarray
+# monet-regrid: Regridding utilities for xarray
 
 |PyPI| |DOI|
 
 ## Overview
 
-``xarray-regrid`` extends xarray with regridding methods, making it possible to easily and efficiently regrid between rectilinear and curvilinear grids.
+"""
+This file is part of monet-regrid.
+
+monet-regrid is a derivative work of xarray-regrid.
+Original work Copyright (c) 2023-2025 Bart Schilperoort, Yang Liu.
+This derivative work Copyright (c) 2025 [Your Organization].
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+Modifications: Package renamed from xarray-regrid to monet-regrid,
+URLs updated, and documentation adapted for new branding.
+"""
+
+``monet-regrid`` extends xarray with regridding methods, making it possible to easily and efficiently regrid between rectilinear and curvilinear grids.
 
 The new `build_regridder` factory API automatically detects grid types and dispatches to the appropriate regridder implementation. This ensures seamless handling of both rectilinear and curvilinear grids.
 
@@ -29,15 +52,15 @@ For usage examples, please refer to the `quickstart guide <getting_started.md>`_
 For a minimal install:
 
 ```console
-pip install xarray-regrid
+pip install monet-regrid
 ```
 
-*Note: xarray-regrid is also [available on conda-forge](https://anaconda.org/conda-forge/xarray-regrid).*
+*Note: monet-regrid is also [available on conda-forge](https://anaconda.org/conda-forge/monet-regrid).*
 
 To improve performance in certain cases:
 
 ```console
-pip install xarray-regrid[accel]
+pip install monet-regrid[accel]
 ```
 
 which includes optional extras such as:
@@ -49,10 +72,10 @@ Benchmarking varies across different hardware specifications, but the inclusion 
 
 ## Usage
 
-The xarray-regrid routines are accessed using the "regrid" accessor on an xarray Dataset:
+The monet-regrid routines are accessed using the "regrid" accessor on an xarray Dataset:
 
 ```python
-import xarray_regrid
+import monet_regrid
 import xarray as xr
 
 ds = xr.open_dataset("input_data.nc")

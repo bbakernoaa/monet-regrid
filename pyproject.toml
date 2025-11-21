@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "xarray-regrid"
+name = "monet-regrid"
 dynamic = ["version"]
 description = 'Regridding tools using xarray and flox.'
 readme = "README.md"
@@ -11,7 +11,7 @@ requires-python = ">=3.10"
 license = "Apache-2.0"
 keywords = []
 authors = [
-  { name = "Bart Schilperoort, Yang Liu", email = "b.schilperoort@esciencecenter.nl" },
+  { name = "Barry Baker", email = "barry.baker@noaa.gov" },
 ]
 classifiers = [
   "Development Status :: 4 - Beta",
@@ -36,9 +36,9 @@ exclude = [
 ]
 
 [project.urls]
-Documentation = "https://github.com/EXCITED-CO2/xarray-regrid#readme"
-Issues = "https://github.com/EXCITED-CO2/xarray-regrid/issues"
-Source = "https://github.com/EXCITED-CO2/xarray-regrid"
+Documentation = "https://github.com/EXCITED-CO2/monet-regrid#readme"
+Issues = "https://github.com/EXCITED-CO2/monet-regrid/issues"
+Source = "https://github.com/EXCITED-CO2/monet-regrid"
 
 [project.optional-dependencies]
 accel = [
@@ -73,7 +73,7 @@ docs = [  # Required for ReadTheDocs
 ]
 
 [tool.hatch.version]
-path = "src/xarray_regrid/__init__.py"
+path = "src/monet_regrid/__init__.py"
 
 [tool.hatch.envs.default]
 features = ["accel", "dev", "benchmarking"]
@@ -148,7 +148,7 @@ unfixable = [
 ]
 
 [tool.ruff.lint.isort]
-known-first-party = ["xarray_regrid"]
+known-first-party = ["monet_regrid"]
 
 [tool.ruff.lint.flake8-tidy-imports]
 ban-relative-imports = "all"
@@ -158,16 +158,16 @@ ban-relative-imports = "all"
 "tests/**/*" = ["PLR2004", "S101", "TID252"]
 
 [tool.coverage.run]
-source_pkgs = ["xarray_regrid", "tests"]
+source_pkgs = ["monet_regrid", "tests"]
 branch = true
 parallel = true
 omit = [
-  "src/xarray_regrid/__about__.py",
+  "src/monet_regrid/__about__.py",
 ]
 
 [tool.coverage.paths]
-xarray_regrid = ["xarray_regrid", "*/xarray_regrid/xarray_regrid"]
-tests = ["tests", "*/xarray_regrid/tests"]
+monet_regrid = ["monet_regrid", "*/monet_regrid/monet_regrid"]
+tests = ["tests", "*/monet_regrid/tests"]
 
 [tool.coverage.report]
 exclude_lines = [

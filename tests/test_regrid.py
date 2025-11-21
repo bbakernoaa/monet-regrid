@@ -10,7 +10,11 @@ try:
 except ImportError:
     xesmf = None
 
-import xarray_regrid
+import monet_regrid
+
+# REBRAND NOTICE: This test file has been updated to use the new monet_regrid package.
+# Old import: import xarray_regrid
+# New import: import monet_regrid
 
 DATA_PATH = Path(__file__).parent.parent / "docs" / "notebooks" / "benchmarks" / "data"
 
@@ -46,7 +50,7 @@ def cdo_comparison_data() -> dict[str, xr.Dataset]:
 
 @pytest.fixture(scope="session")
 def sample_grid_ds():
-    grid = xarray_regrid.Grid(
+    grid = monet_regrid.Grid(
         north=90,
         east=180,
         south=45,
@@ -55,12 +59,12 @@ def sample_grid_ds():
         resolution_lon=0.17,
     )
 
-    return xarray_regrid.create_regridding_dataset(grid)
+    return monet_regrid.create_regridding_dataset(grid)
 
 
 @pytest.fixture(scope="session")
 def conservative_sample_grid():
-    grid = xarray_regrid.Grid(
+    grid = monet_regrid.Grid(
         north=90,
         east=360,
         south=-90,
@@ -69,7 +73,7 @@ def conservative_sample_grid():
         resolution_lon=2.2,
     )
 
-    return xarray_regrid.create_regridding_dataset(grid)
+    return monet_regrid.create_regridding_dataset(grid)
 
 
 @pytest.mark.parametrize("method", ["linear", "nearest"])
@@ -235,7 +239,7 @@ def test_conservative_output_chunks():
 def test_conservative_nan_thresholds_against_xesmf():
     ds = xr.tutorial.open_dataset("ersstv5").sst.isel(time=[0]).compute()
     ds = ds.rename(lon="longitude", lat="latitude")
-    new_grid = xarray_regrid.Grid(
+    new_grid = monet_regrid.Grid(
         north=90,
         east=360,
         south=-90,
@@ -243,7 +247,7 @@ def test_conservative_nan_thresholds_against_xesmf():
         resolution_lat=2,
         resolution_lon=2,
     )
-    target_dataset = xarray_regrid.create_regridding_dataset(new_grid)
+    target_dataset = monet_regrid.create_regridding_dataset(new_grid)
     regridder = xesmf.Regridder(ds, target_dataset, "conservative")
 
     for nan_threshold in [0.0, 0.25, 0.5, 0.75, 1.0]:

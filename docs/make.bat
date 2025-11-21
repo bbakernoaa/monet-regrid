@@ -9,7 +9,7 @@ if "%SPHINXBUILD%" == "" (
 )
 set SOURCEDIR=.
 set BUILDDIR=_build
-set SPHINXPROJ=xarray-regrid
+set SPHINXPROJ=monet-regrid
 
 if "%1" == "" goto help
 

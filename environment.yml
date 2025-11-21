@@ -1,5 +1,5 @@
 ---
-name: xarray-regrid
+name: monet-regrid
 channels:
   - conda-forge
 dependencies:
@@ -7,4 +7,4 @@ dependencies:
   - xESMF
   - cdo
   - pip:
-      - "xarray-regrid[accel,benchmarking,dev]"
+      - "monet-regrid[accel,benchmarking,dev]"

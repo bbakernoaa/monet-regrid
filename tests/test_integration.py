@@ -1,12 +1,16 @@
-"""Integration tests for the complete xarray-regrid refactoring pipeline."""
+"""Integration tests for the complete monet-regrid rebranding pipeline."""
 
 import numpy as np
 import pytest
 import xarray as xr
 
-from xarray_regrid.core import RectilinearRegridder, CurvilinearRegridder
-from xarray_regrid.constants import GridType
-from xarray_regrid.utils import _get_grid_type
+from monet_regrid.core import RectilinearRegridder, CurvilinearRegridder
+from monet_regrid.constants import GridType
+from monet_regrid.utils import _get_grid_type
+
+# REBRAND NOTICE: This test file has been updated to use the new monet_regrid package.
+# Old imports: from xarray_regrid.core import ...; from xarray_regrid.constants import ...; from xarray_regrid.utils import ...
+# New imports: from monet_regrid.core import ...; from monet_regrid.constants import ...; from monet_regrid.utils import ...
 
 
 def test_rectilinear_to_rectilinear_regridding():

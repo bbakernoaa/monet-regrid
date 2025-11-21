@@ -4,7 +4,7 @@ Example Notebooks
 
 To benchmark the library against some more standard tools, we have created some notebooks.
 
-Most notebooks compare the methods implemented in xarray-regrid against more standard tools (CDO, ESMF).
+Most notebooks compare the methods implemented in monet-regrid against more standard tools (CDO, ESMF).
 
 .. toctree::
   :maxdepth: 1
