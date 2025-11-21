@@ -127,7 +127,7 @@ html_sidebars = {
     ]
 }
 
-html_logo = "./assets/logo.png"
+# html_logo = "./assets/logo.png"
 
 # -- Options for Intersphinx
 

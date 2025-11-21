@@ -1,8 +1,5 @@
 # monet-regrid: Regridding utilities for xarray.
 
-<img align="right" width="100" alt="Logo" src="./docs/assets/logo.png">
-
-
 With monet-regrid it is possible to regrid between two rectilinear grids. The following methods are supported:
  - Linear
  - Nearest-neighbor
