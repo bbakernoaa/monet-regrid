@@ -27,7 +27,7 @@ authors:
     affiliation: Tensorial (EI Bernard Mares)
     email: services-xarray-regrid@tensorial.com
 
-repository-code: 'https://github.com/NOAA-CSL/monet-regrid'
+repository-code: 'https://github.com/noaa-oar-arl/monet-regrid'
 keywords:
   - xarray
   - geospatial
