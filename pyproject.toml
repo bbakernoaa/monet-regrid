@@ -32,7 +32,9 @@ dependencies = [
 
 [tool.hatch.build]
 exclude = [
-  "benchmarks/data"
+  "benchmarks/data",
+  "backup",
+  ".benchmarks",
 ]
 
 [project.urls]
